@@ -2,31 +2,32 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>INGDLC 도배 목록</title>
+  <title>asdf</title>
 </head>
 
 <body>
   <div id="myData"></div>
   <script type="text/javascript">
-    fetch('./list.json')
-        .then(function (response) {
-            return response.json();
-        })
-        .then(function (data) {
-            appendData(data);
-        })
-        .catch(function (err) {
-            console.log('error: ' + err);
-        });
+    fetch('list.json')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (data) {
+        // appendData(data);
+        document.write(JSON.stringify(data));
+      })
+      .catch(function (err) {
+        console.log('error: ' + err);
+      });
 
-    function appendData(data) {
-        let mainContainer = document.getElementById("myData");
-        for (let i = 0; i < data.length; i++) {
-            let div = document.createElement("div");
-            div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
-            mainContainer.appendChild(div);
-        }
-    }
+    // function appendData(data) {
+    //   let mainContainer = document.getElementById("myData");
+    //   for (let i = 0; i < data.length; i++) {
+    //     let div = document.createElement("div");
+    //     div.innerHTML = 'Name: ' + data[i].firstName + ' ' + data[i].lastName;
+    //     mainContainer.appendChild(div);
+    //   }
+    // }
   </script>
 </body>
 
